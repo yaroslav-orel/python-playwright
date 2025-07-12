@@ -1,7 +1,7 @@
-from playwright.sync_api import Page, expect
+from playwright.sync_api import Page
 from testcontainers.core.container import DockerContainer
 
-from pages.BasePage import BasePage
+from pages.base_page import BasePage
 
 
 class HeaderSection(BasePage):
@@ -16,5 +16,3 @@ class HeaderSection(BasePage):
         self.demo_pages_button = self.header.get_by_text("Demo pages")
         self.welcome_text = self.header.locator(".account")
         self.log_out_button = self.header.locator(".logOut")
-
-

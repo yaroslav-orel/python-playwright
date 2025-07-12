@@ -1,13 +1,13 @@
-from playwright.sync_api import Page, expect
+from playwright.sync_api import Page
 from testcontainers.core.container import DockerContainer
 
-from pages.BasePage import BasePage
+from pages.base_page import BasePage
 
 PATH_TO_LOGIN = "/login/"
 
 class LoginPage(BasePage):
-    def __init__(self, page: Page, webapp: DockerContainer):
-        super().__init__(page, webapp)
+    def __init__(self, page: Page, container: DockerContainer):
+        super().__init__(page, container)
 
         self.username_input = page.locator("#id_username")
         self.password_input = page.locator("#id_password")

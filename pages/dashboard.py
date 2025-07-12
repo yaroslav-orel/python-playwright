@@ -1,8 +1,8 @@
 from playwright.sync_api import Page
 from testcontainers.core.container import DockerContainer
 
-from pages.BasePage import BasePage
-from pages.HeaderSection import HeaderSection
+from pages.base_page import BasePage
+from pages.header import HeaderSection
 
 
 class DashboardPage(BasePage):

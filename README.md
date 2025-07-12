@@ -12,5 +12,5 @@ uv sync                                              # Install dependencies
 
 ## Running the tests
 ```
-pytest
+make test
 ```

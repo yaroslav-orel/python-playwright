@@ -1,15 +1,8 @@
-import re
-from time import sleep
+from playwright.sync_api import expect
 
-from playwright.sync_api import Page, expect
-
-import pytest
-from testcontainers.core.container import DockerContainer
-
-from conftest import login_page
-from pages.DashboardPage import DashboardPage
-from pages.LoginPage import LoginPage
-from pages.RegisterPage import RegisterPage
+from pages.dashboard import DashboardPage
+from pages.login import LoginPage
+from pages.registration import RegisterPage
 
 
 def test_login_error(login_page: LoginPage):

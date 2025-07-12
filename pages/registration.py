@@ -1,7 +1,7 @@
 from playwright.sync_api import Page
 from testcontainers.core.container import DockerContainer
 
-from pages.BasePage import BasePage
+from pages.base_page import BasePage
 
 PATH_TO_REGISTER_PAGE = "/register"
 
