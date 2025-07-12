@@ -16,17 +16,7 @@ SCREENSHOT_NAME_PATTERN = re.compile(r"^test-failed-\d+\.png$")
 @pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_teardown(item, nextitem):
     yield
-
-    artifacts_dir = item.funcargs.get("output_path")
-    if artifacts_dir:
-        artifacts_dir_path = Path(artifacts_dir)
-        if artifacts_dir_path.is_dir():
-            for file in artifacts_dir_path.iterdir():
-                if file.is_file() and SCREENSHOT_NAME_PATTERN.match(file.name):
-                    attach.file(str(file), name=file.name, attachment_type=attachment_type.PNG)
-                elif file.is_file() and file.suffix == ".webm":
-                    attach.file(file, name=file.name, attachment_type=attachment_type.WEBM)
-
+    attach_files(item)
 
 @pytest.fixture(scope="session", autouse=True)
 def container():
@@ -43,3 +33,14 @@ def login_page(page: Page, container: DockerContainer):
 @pytest.fixture
 def register_page(page: Page, container: DockerContainer):
     yield RegisterPage(page, container)
+
+def attach_files(item):
+    artifacts_dir = item.funcargs.get("output_path")
+    if artifacts_dir:
+        artifacts_dir_path = Path(artifacts_dir)
+        if artifacts_dir_path.is_dir():
+            for file in artifacts_dir_path.iterdir():
+                if file.is_file() and SCREENSHOT_NAME_PATTERN.match(file.name):
+                    attach.file(str(file), name=file.name, attachment_type=attachment_type.PNG)
+                elif file.is_file() and file.suffix == ".webm":
+                    attach.file(file, name=file.name, attachment_type=attachment_type.WEBM)
