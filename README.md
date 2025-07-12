@@ -3,6 +3,9 @@
 ## Motivation
 Get familiar with Playwright for Python.
 
+## Requirements
+- Docker
+
 ## Setup
 ```
 curl -LsSf https://astral.sh/uv/install.sh | sh      # Install uv
