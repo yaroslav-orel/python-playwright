@@ -1,3 +1,5 @@
+from random import randrange
+
 from playwright.sync_api import expect
 
 from pages.dashboard import DashboardPage
@@ -15,7 +17,7 @@ def test_login_error(login_page: LoginPage):
 
 
 def test_registration_success(register_page: RegisterPage):
-    username = "testuser"
+    username = f"testuser{randrange(1000)}"
     email = "test@mail.com"
     password = "s1roNgPa77"
 
