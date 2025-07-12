@@ -1,7 +1,7 @@
 import re
 from pathlib import Path
 
-import allure
+from allure import attachment_type, attach
 import pytest
 from playwright.sync_api import Page
 from testcontainers.core.container import DockerContainer
@@ -23,9 +23,9 @@ def pytest_runtest_teardown(item, nextitem):
         if artifacts_dir_path.is_dir():
             for file in artifacts_dir_path.iterdir():
                 if file.is_file() and SCREENSHOT_NAME_PATTERN.match(file.name):
-                    allure.attach.file(str(file), name=file.name, attachment_type=allure.attachment_type.PNG)
+                    attach.file(str(file), name=file.name, attachment_type=attachment_type.PNG)
                 elif file.is_file() and file.suffix == ".webm":
-                    allure.attach.file(file, name=file.name, attachment_type=allure.attachment_type.WEBM)
+                    attach.file(file, name=file.name, attachment_type=attachment_type.WEBM)
 
 
 @pytest.fixture(scope="session", autouse=True)

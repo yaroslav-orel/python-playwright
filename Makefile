@@ -1,8 +1,14 @@
+RESULTS_DIR=allure-results
+
 test:
-	pytest --alluredir allure-results || true
-	allure serve allure-results
+	rm -rf $(RESULTS_DIR)
+	pytest --alluredir $(RESULTS_DIR) || allure serve $(RESULTS_DIR)
+
+report:
+	allure serve $(RESULTS_DIR)
 
 lint:
-	pylint *.py --disable=missing-docstring || true
+	pylint *.py
+
 
 
