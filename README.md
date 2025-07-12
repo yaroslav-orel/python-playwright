@@ -11,6 +11,7 @@ Get familiar with Playwright for Python.
 curl -LsSf https://astral.sh/uv/install.sh | sh      # Install uv
 uv python install 3.12                               # Install Python
 uv sync                                              # Install dependencies
+playwright install                                   # Install Playwright browsers
 ```
 
 ## Running the tests
