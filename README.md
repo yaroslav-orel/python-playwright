@@ -1,7 +1,12 @@
 # python-playwright
 
-## Motivation
-Get familiar with Playwright for Python.
+## Description
+This repository contains a set of tests written in Python for a dockerized application.
+Main features:
+- Dependency and virtual environment management via `uv`
+- Application deployment during test execution via `testcontainers` 
+- Reports by `Allure` with screenshots and videos on failure
+- Concurrent test execution support
 
 ## Requirements
 - docker
@@ -9,7 +14,7 @@ Get familiar with Playwright for Python.
 - make
 - uv
 
-## Setup
+## Setup [one-time]
 ```
 make setup
 ```
