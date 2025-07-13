@@ -1,6 +1,6 @@
 setup:
-    uv run playwright install
-    uv run playwright install-deps
+	uv run playwright install
+	uv run playwright install-deps
 
 test:
 	uv run pytest ||  allure serve
