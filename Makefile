@@ -1,13 +1,11 @@
-RESULTS_DIR=allure-results
-
 test:
-	pytest --alluredir $(RESULTS_DIR) --clean-alluredir || allure serve $(RESULTS_DIR)
+	uv run pytest ||  uv run allure serve
 
 report:
-	allure serve $(RESULTS_DIR)
+	uv run allure serve
 
 lint:
-	pylint *.py
+	uv run pylint *.py
 
 
 

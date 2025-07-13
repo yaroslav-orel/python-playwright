@@ -3,7 +3,7 @@ name = "python-playwright"
 version = "0.1.0"
 description = "Playwright fun"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.13"
 dependencies = [
     "allure-pytest>=2.14.3",
     "pylint>=3.3.7",
