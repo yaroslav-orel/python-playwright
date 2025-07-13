@@ -4,14 +4,14 @@
 Get familiar with Playwright for Python.
 
 ## Requirements
-- Docker
+- docker
+- allure
+- make
+- uv
 
 ## Setup
 ```
-curl -LsSf https://astral.sh/uv/install.sh | sh      # Install uv
-uv venv --python 3.13                                # Create a virtual environment
-uv sync                                              # Install dependencies
-uvx playwright install                               # Install Playwright browsers
+make setup
 ```
 
 ## Running the tests

@@ -1,8 +1,12 @@
+setup:
+    uv run playwright install
+    uv run playwright install-deps
+
 test:
-	uv run pytest ||  uv run allure serve
+	uv run pytest ||  allure serve
 
 report:
-	uv run allure serve
+	allure serve
 
 lint:
 	uv run pylint *.py
