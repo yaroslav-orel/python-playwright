@@ -5,6 +5,7 @@ from pages.base_page import BasePage
 
 PATH_TO_LOGIN = "/login/"
 
+
 class LoginPage(BasePage):
     def __init__(self, page: Page, container: DockerContainer):
         super().__init__(page, container)

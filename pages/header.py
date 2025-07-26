@@ -5,7 +5,6 @@ from pages.base_page import BasePage
 
 
 class HeaderSection(BasePage):
-
     def __init__(self, page: Page, webapp: DockerContainer):
         super().__init__(page, webapp)
         self.header = page.locator("header")

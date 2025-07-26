@@ -5,8 +5,8 @@ from pages.base_page import BasePage
 
 PATH_TO_REGISTER_PAGE = "/register"
 
-class RegisterPage(BasePage):
 
+class RegisterPage(BasePage):
     def __init__(self, page: Page, webapp: DockerContainer):
         super().__init__(page, webapp)
 

@@ -23,12 +23,13 @@ make setup
 ```
 make test
 ```
+
 ## Generating the report
 ```
 make report
 ```
-## Linting
-Before commiting code, you should run the linter to ensure code quality:
+
+## Linting & Formatting
 ```
-make lint
+make ruff
 ```

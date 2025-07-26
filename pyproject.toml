@@ -6,10 +6,10 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "allure-pytest>=2.14.3",
-    "pylint>=3.3.7",
     "pytest==8.4.1",
     "pytest-playwright==0.7.0",
     "pytest-xdist>=3.8.0",
+    "ruff>=0.12.5",
     "testcontainers==4.10.0",
 ]
 
@@ -23,3 +23,6 @@ addopts = [
     "--browser", "chromium",
     "--browser", "firefox"
 ]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]

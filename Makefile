@@ -8,8 +8,9 @@ test:
 report:
 	allure serve
 
-lint:
-	uv run pylint *.py
+ruff:
+    uv run ruff format
+	uv run ruff check --fix
 
 
 

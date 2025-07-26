@@ -5,7 +5,6 @@ from config import APP_PORT
 
 
 class BasePage:
-
     def __init__(self, page: Page, webapp: DockerContainer):
         self.page = page
         self.webapp = webapp
