@@ -19,9 +19,9 @@ make test
 make test
 ```
 
-**Linting:**
+**Code formatting and linting:**
 ```bash
-make lint
+make ruff
 ```
 
 **Generate Allure report:**
@@ -62,3 +62,4 @@ This is a Python Playwright test automation framework for testing a dockerized w
 - uv for dependency management
 - Docker for application containers
 - Allure for reporting
+- ruff for code formatting and linting
