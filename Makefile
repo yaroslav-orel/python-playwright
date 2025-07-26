@@ -3,7 +3,7 @@ setup:
 	uv run playwright install-deps
 
 test:
-	uv run pytest ||  allure serve
+	uv run pytest
 
 report:
 	allure serve

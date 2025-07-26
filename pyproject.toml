@@ -12,3 +12,14 @@ dependencies = [
     "pytest-xdist>=3.8.0",
     "testcontainers==4.10.0",
 ]
+
+[tool.pytest.ini_options]
+addopts = [
+    "--alluredir", "allure-results",
+    "--clean-alluredir",
+    "--screenshot", "only-on-failure",
+    "--video", "retain-on-failure",
+    "--browser", "webkit",
+    "--browser", "chromium",
+    "--browser", "firefox"
+]

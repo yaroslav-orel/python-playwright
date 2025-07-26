@@ -24,7 +24,6 @@ make setup
 make test
 ```
 ## Generating the report
-In case of test failure, report will be generated and served automatically, but you can also generate it manually by running:
 ```
 make report
 ```
