@@ -26,3 +26,4 @@ addopts = [
 
 [tool.ruff.lint]
 select = ["E", "W", "F", "N", "PL", "B", "A", "RUF", "ERA"]
+ignore = ["RUF001"]
