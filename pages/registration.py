@@ -10,11 +10,12 @@ class RegisterPage(BasePage):
     def __init__(self, page: Page, webapp: DockerContainer):
         super().__init__(page, webapp)
 
-        self.username_input = self.page.locator("#id_username")
-        self.email_input = self.page.locator("#id_email")
-        self.password_input = self.page.locator("#id_password1")
-        self.password_confirm_input = self.page.locator("#id_password2")
+        self.username_input = page.locator("#id_username")
+        self.email_input = page.locator("#id_email")
+        self.password_input = page.locator("#id_password1")
+        self.password_confirm_input = page.locator("#id_password2")
         self.register_input = page.locator("input[value='Register']")
+        self.registration_errors = page.locator("ul li")
 
     def register(self, username: str, email: str, password: str, password_confirm: str):
         self.username_input.fill(username)
