@@ -4,7 +4,7 @@ from playwright.sync_api import expect
 
 from models.user import User
 from pages.dashboard import DashboardPage
-from pages.login import LoginPage
+from pages.login import LoginPage, PATH_TO_LOGIN
 from pages.registration import RegisterPage
 from tests.conftest import create_user_and_login, register_user
 
@@ -20,8 +20,8 @@ def test_login_error(login_page: LoginPage):
 
 def test_registration_success(register_page: RegisterPage):
     user = User(
-        username=f"testuser{randrange(1000)}",
-        email="test@mail.com",
+        username=f"testuser{randrange(1000, 9999)}",
+        email=f"test{randrange(1000, 9999)}@mail.com",
         password="s1roNgPa77",
     )
 
@@ -31,8 +31,8 @@ def test_registration_success(register_page: RegisterPage):
 
 def test_successful_login(register_page: RegisterPage, login_page: LoginPage):
     user = User(
-        username=f"loginuser{randrange(1000)}",
-        email="login@test.com",
+        username=f"loginuser{randrange(1000, 9999)}",
+        email=f"login{randrange(1000, 9999)}@test.com",
         password="s1roNgPa77",
     )
 
@@ -42,8 +42,8 @@ def test_successful_login(register_page: RegisterPage, login_page: LoginPage):
 
 def test_registration_password_mismatch(register_page: RegisterPage):
     user = User(
-        username=f"mismatchuser{randrange(1000)}",
-        email="mismatch@test.com",
+        username=f"mismatchuser{randrange(1000, 9999)}",
+        email=f"mismatch{randrange(1000, 9999)}@test.com",
         password="s1roNgPa77",
     )
     password_confirm = "differentPassword123"
@@ -66,4 +66,4 @@ def test_logout_functionality(
     dashboard_page.header.log_out_button.click()
 
     # Verify redirected to login page
-    expect(login_page.page).to_have_url(f"{login_page.base_url}/login/")
+    expect(login_page.page).to_have_url(f"{login_page.base_url}{PATH_TO_LOGIN}")

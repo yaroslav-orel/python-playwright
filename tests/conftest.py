@@ -49,7 +49,7 @@ def dashboard_page(page: Page, container: DockerContainer):
 def shared_user():
     return User(
         username=f"shareduser{randrange(1000, 9999)}",
-        email="shared@test.com",
+        email=f"shared{randrange(1000, 9999)}@test.com",
         password="s1roNgPa77",
     )
 
@@ -71,7 +71,7 @@ def registered_user(shared_user: User, browser: Browser, container: DockerContai
 
 def create_user_and_login(
     register_page: RegisterPage, login_page: LoginPage, user: User
-):
+) -> DashboardPage:
     """Helper function to register a user and login."""
     register_page.navigate()
     register_page.register(user.username, user.email, user.password, user.password)
@@ -85,7 +85,7 @@ def create_user_and_login(
     return dashboard_page
 
 
-def register_user(register_page: RegisterPage, user: User):
+def register_user(register_page: RegisterPage, user: User) -> DashboardPage:
     """Helper function to register a user and return dashboard page."""
     register_page.navigate()
     register_page.register(user.username, user.email, user.password, user.password)
